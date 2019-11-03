@@ -1,7 +1,7 @@
 TARGET=$1
 SHORT_SHA=${SHORT_SHA:-local-build-short-sha}
 DOCKER_BASE=gcr.io/$PROJECT_ID/$TARGET-builder
-#docker pull $DOCKER_BASE
+docker pull $DOCKER_BASE
 docker build \
     --cache-from=$DOCKER_BASE:latest \
     -f ./$TARGET/DockerFile \
