@@ -1,0 +1,5 @@
+FROM launcher.gcr.io/google/ubuntu16_04 as inspect
+    WORKDIR /inspect
+    ADD inspect/inspect.sh .
+    RUN chmod +x inspect.sh
+    ENTRYPOINT /inspect/inspect.sh

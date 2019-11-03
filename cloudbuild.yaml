@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: 
+  - '-c'
+  - |
+    chmod +x docker-build.sh
+    export PROJECT_ID=$PROJECT_ID
+    export SHORT_SHA=$SHORT_SHA
+    export BUILD_ID=$BUILD_ID
+    ./docker-build.sh upload-gs
+    ./docker-build.sh install-utf8
+    ./docker-build.sh inspect
+    ./docker-build.sh gunzip
+
+ 

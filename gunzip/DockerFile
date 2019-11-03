@@ -1,0 +1,3 @@
+FROM launcher.gcr.io/google/ubuntu16_04 as gunzip
+    RUN apt-get install -y gzip
+    ENTRYPOINT ["gunzip"]

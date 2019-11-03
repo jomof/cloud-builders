@@ -1,0 +1,4 @@
+FROM launcher.gcr.io/google/ubuntu16_04 as install-utf8
+    RUN apt-get install -y locales
+    RUN locale-gen en_US.UTF-8
+    ENTRYPOINT locale-gen en_US.UTF-8

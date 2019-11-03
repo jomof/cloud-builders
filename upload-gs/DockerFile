@@ -1,0 +1,5 @@
+FROM gcr.io/cloud-builders/gsutil as upload-gs
+    WORKDIR /upload-gs
+    ADD upload-gs/upload-gs.sh .
+    RUN chmod +x upload-gs.sh
+    ENTRYPOINT /upload-gs/upload-gs.sh
