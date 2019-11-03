@@ -1,5 +1,5 @@
 FROM gcr.io/cloud-builders/dotnet as dotnet-build
     WORKDIR /dotnet-build
-    ADD dotnet-build.sh .
+    ADD dotnet-build/dotnet-build.sh .
     RUN chmod +x dotnet-build.sh
     ENTRYPOINT /dotnet-build/dotnet-build.sh
