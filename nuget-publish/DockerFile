@@ -1,0 +1,5 @@
+FROM gcr.io/cloud-builders/dotnet as nuget-publish
+    WORKDIR /nuget-publish
+    ADD nuget-publish/nuget-publish.sh .
+    RUN chmod +x nuget-publish.sh
+    ENTRYPOINT /nuget-publish/nuget-publish.sh
